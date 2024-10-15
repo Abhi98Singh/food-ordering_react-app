@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  position: sticky;
+}
+.logo {
+  width: 80px;
+  cursor: pointer;
+}
+.navItems ul {
+  display: flex;
+  list-style: none;
+  padding-right: 20px;
+  font-size: 21px;
+}
+.navItems ul li {
+  padding: 0 10px;
+  margin: 0 10px;
+  /* list-style: none; */
+  cursor: pointer;
+}
+.navLinks {
+  text-decoration: none;
+  color: black;
+}
+.navItems ul li :hover {
+  color: rgb(241, 159, 5);
+  font-weight: 600;
+}
+#cartIcon {
+  width: 45px;
+  height: 35px;
+}
+.loginBtn {
+  padding: 6px 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  line-height: 16px;
+  border: 2px solid black;
+  border-radius: 6px;
+  color: white;
+  background-color: rgb(241, 159, 5);
+  font-size: 14px;
+  min-width: 78.03px;
+}
+.loginBtn:hover {
+  background-color: rgb(154, 101, 4);
+}
+.searchBar {
+  padding: 10px;
+}
+.restContainer {
+  border: 1px solid black;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 90vh; */
+  padding-left: 40px;
+}
+.restCard {
+  width: 220px;
+  min-height: 400px;
+  text-align: center;
+  margin: 30px;
+  padding: 7px;
+  background-color: #f0f0f0;
+}
+.restCard:hover {
+  border: 3px solid black;
+  cursor: pointer;
+}
+.restCardName {
+  margin-top: 10px;
+  color: black;
+}
+.cardImg {
+  height: 243px;
+  width: 100%;
+}
+.cardOtherDetails {
+  margin-top: 8px;
+  color: black;
+}
+
+.upperContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.filterBtn {
+  margin: 20px;
+  cursor: pointer;
+  padding: 12px 22px;
+  line-height: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  color: white;
+  background-color: rgb(241, 159, 5);
+  font-size: 16px;
+}
+.filterBtn:hover {
+  background-color: rgb(154, 101, 4);
+}
+.searchBar {
+  padding: 10px;
+}
+.searchInputBox {
+  font-size: 16px;
+  width: 400px;
+  padding: 8px 6px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.searchBtn {
+  padding: 8px 16px;
+  margin-left: 4px;
+  line-height: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  color: white;
+  background-color: rgb(241, 159, 5);
+  font-size: 14px;
+  cursor: pointer;
+}
+.searchBtn:hover {
+  background-color: rgb(154, 101, 4);
+}
+
+.pageHeading {
+  margin: 16px 0;
+  text-align: center;
+}
+.pageContent {
+  text-align: center;
+}
+.linkableCard {
+  text-decoration: none;
+}
+.menuContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.menuBox {
+  border: 2px solid black;
+  margin-top: 40px;
+  padding: 10px 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.menuImg {
+  width: 380px;
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 18px;
+}
+.resMenuDetails {
+  margin-bottom: 9px;
+}
+.menuHead {
+  margin: 14px 0 6px 0;
+}
+.menuItems {
+  padding: 6px 4px 9px 4px;
+  border: 1px solid orangered;
+}
+.userCard {
+  padding: 10px;
+  border: 1px solid black;
+}
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.profileCard {
+  border: 2px solid black;
+  padding-bottom: 10px;
+  margin-top: 8px;
+}
+.profilePhoto {
+  height: 250px;
+  width: 100%;
+}
+.profileDetails {
+  text-align: center;
+  padding-top: 5px;
+}
+.ShimmerCardContainer {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 20px;
+}
+.ShimmerProfileCard {
+  background-color: #f0f0f0;
+  width: 288px;
+  height: 318px;
+}
+.offlineMsg {
+  margin-top: 3%;
+  text-align: center;
+}

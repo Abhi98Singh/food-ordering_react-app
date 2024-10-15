@@ -1,0 +1,265 @@
+
+  $ - In this episode, we will see How can we write test cases inside React app, How can we test our application
+
+
+    Q:-) Why testing is important? why do we need it.
+
+    A:- because, even a single line of code can messup/crash our application, when application goes bigger
+        we have to deal with lots of components and the components talk/communicate to each other
+        so many components have to collabrate to make this feature or functionality to work, Ex:- Search bar of our app
+         so its become difficult to to test by manual tetsing in that case,Automation Testing will become really imporatnt
+
+
+
+      - We will talk about the testing which is "Developer testing", won't talk about QA Testing that is different Testing
+
+     $ - Developer testing are two types :- (i)Manual Testing   (ii)Automation Testing(Writing test cases)
+
+      #  - Automation tetsing - writing test cases(codes) which will test our application automatically
+
+        % - We are gonna see Automation testing
+
+    
+    Q:-) How many Automation testing types(the testing we write as developer by writing test cases/codes) are there ?
+
+    A:-  There are three types of testing(the testing we write as developer by writing test cases/codes)
+
+          (i) Unit Testing
+          (ii) Intregation Testing
+          (iii) End to End testing(e2e testing)
+
+
+    Q:-) What is Unit Testing ?
+
+    A:-  Unit Testing means test your React component(one unit of ur react app means a comp) in Isolation
+          Ex: we want to test specific comp like Header comp whether it is rendering or not
+
+
+    Q:-) What is Intregation Testing ?
+
+    A:-  Intregation Testing means testing the Intregation of the component, when we have a big large application
+          we have to deal with lots of components and the components talk/communicate to each other
+          If we serarch any restaurant in our search bar of app, so many components have to collabrate to make this feature
+          It is basically a Intregation of so-many components..To test the feature like 'search restaurant' is called
+          Intregation Testing because multiple components intregating and communicating each each to make this feature
+          Basically, we have to test the flow :- search me kuch keyword likha, fir serach buuton dabaya fir restlist
+          ko update karke, filter karke render kiya
+
+
+    
+    Q:-) What is End-to-End Testing ?
+
+    A:-  End-to-End Testing means Testing the react application as soon as user lands on the website to user leaves the website
+          We will test all the flows, it's basically like simulatinh whatever user will do throughout the app
+          How user will flow across the application
+
+          End-to-End Testing requires different types of tools like Selenium, Cypress, Puppeteer which will test our whole app
+
+
+
+      $ - In Big compamies, Testing is a part of Development, u have to write test cases while developing
+
+
+
+      $ - As a developer, we'll concern about first 2 types of testings - Unit and Intergation
+
+
+      $ - In this episode  we will learn about first 2 types of testings - Unit and Intergation
+
+
+
+      $ - For tetsing our React application, we have to need some linraries, have to setup our application
+          to write cases
+
+          - # React Testing Library :- first we will install react testing library to write test cases in our react app
+
+              - DOM Testing Library is base of all testing libraries including React Testing Library
+
+              - React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components.
+
+              - If we use creat-react-app to build a react app then React Testing Library already intregated to our app
+                  but we have to intregate it because it buildour app using parcel from scratch
+
+
+      $ - React Testing Library uses "Jest"
+
+        - We need both 'Jest' and 'React Testing Library ' in our application
+
+
+      $ - => lets install both library and Jest => - 1.) npm install --save-dev @testing-library/react @testing-library/dom
+
+                                                   - 2.) npm i -D jest or npm install --save-dev jest  [ -D = --save-dev ] 
+
+                                                      < We can aslo write -D in place of --save-dev => [ -D = --save-dev ] >
+
+      => To use Babel, install additonal dependencies: - 3.)  npm install --save-dev babel-jest @babel/core @babel/preset-env    
+       
+      => 4.) Configure Babel to target your current version of Node by creating a babel.config.js   
+
+
+     # -  Parcel uses babel behind the scene, already has babel config in it it uses to transpile the jsx into  
+          Parcel also uses Babel, we are trying to configure Babel according to us(for setup testing)  
+          So this additonal dependencies will interfer wih Parcel's babel, there will be a conflict b/w
+          Babel and Parcel, this new babel configurtion will try to override Parcel's babel's exesting config
+
+      - So we have to change Parcel behaviour to use babel along with Jest
+
+      - To disable Babel transpilation in Parcel, override the default Parcel config
+
+    => 5.)  - $ for that, create a file in root - '.parcelrc' and cop-paste from that parcel docs
+
+            - now this configuration will be used
+
+
+
+      $ - How to run test cases (whta is the command)
+
+            - write this comamnd => " npm run test " , it will call/use jest (see in package.json)
+
+
+    => 6.)  $ - Before writing test cases, we have to "configure jest" , for that =>  " npx jest --init "
+
+            this command will intiaize the jest and create a new config file for jest
+
+
+      $ - Testing cases(code) doesnt run on browser or server, they require a run time(an environemt) to run
+            so the test cases can be executed, we have to jsom (it's gives u superpower of browser / it's is like a browser)
+
+
+      => 7.) - Now install jsdom libraary - " npm install --save-dev jest-environment-jsdom "
+
+                  (before we didnt need to innstall jsdom librar seprately, it was a part of React Testing Library)
+
+
+
+      $ -  Now lets writing test cases
+
+            - firt lets write test case for Javascript - creating a sum.js and exprting sum function
+
+            - $ Where should we write test cases in whcih file/folder (npm run test command gives u hint)
+                  create a folder __tests__
+
+                  - we can crate a testing file like :- fileName.|test/spec.|.js/ts
+
+      
+      $   - For testing test cases :- we have to make a testing function which takes two arguments :-
+                                     a string " " and callback function,
+                                     in 1st argument we give description of test case and in callback we provide
+                                          implementation like we have to test sum() function, so first import it
+                                          do assertion and run the commnad npm run test
+
+                  
+      
+      $   - Lets see how do we write test cases in React
+
+                                    :- Lets test a basic thing our Contact us page is loaded or not
+
+                                          - Lets create a test case for it - Contact.test.js
+
+                                          - @ Whenever u are testing a UI Component inisde React,
+                                            you'll first have render this component on "jsdom"
+                                            for this we'll use render(), this will come from teting library
+
+                                          $ - JSX is not enabled in Test cases, so enable it by installing
+                                             => npm install --save-dev / -D  @babel/preset-react
+                                             - After installing libabary, we have to include @babel/preset-react
+                                                inside babel config ,   ["@babel/preset-react", { runtime : "automatic" }]
+                                                add this in prsents:
+                                                :- this libaray and babel config is helping JSX to convert into HTML
+                                             - We also have to install one more library to use some methods like
+                                              toBeInTheDocumennt() , the libararay is => npm i -D @testing-library/jest-dom
+                                              and Include/Import the libary => import "@testing-library/jest-dom"
+                                             - If you dont get intellegince/autocomplete even after importing "@testing-library/jest-dom" then install this as well => "npm i -D @types/jest"
+
+                                          $- For checking/testing the a component whether is loaded or not
+                                             so for that we''ll use expect('elem').toBeInTheDocumennt() method
+
+                                             - Lets test/check button is loaded or not inside comp, to check write another test case
+
+
+                                          $ - When we get element in testing through getBy /getAllBy methods, it return 
+                                                JSX which is React element which is An Obj
+
+                                          
+      $ - Do group a test cases in a group is done by describe(), we have to do this when our file have lots of test cases
+            describe() is kind of block where u can group ur test cases
+
+            - You can have multiple describe() blocks also
+
+            - You can also have decribe() inisde describe() {nesting of describe()}
+
+
+      $ - When we write test-cases we werite a function test(), so we can also name this as " it() "
+
+                                [  test() = it()  ]
+
+
+  $ - Lets write test cases for Header comp (Unit testing)
+
+      - to check/test whether this comp is loaded with login button, cart=0 or not
+
+            - Lets make a testing file
+
+            - Our Testing libraray doesnt understand and know about Redux and react-router so we have to
+                  Provider and browserRoute
+
+            - we can also use screen.getByText()
+
+            - For finding/geeting specific item in multiple items 
+                  //to specify the button in multiple buttons
+                   const loginButton = screen.getByRole("button", { name: "Login" });
+
+            - use fireEvent from @testing-library to if something happens after trigerring event
+
+
+  $ - Now lets write test cases for RestaurantCard Component
+
+      - Lets check RestaurantCard is rendered or not, we passed mockData as props
+            to render on jsdom
+
+
+
+
+ $ - Now Lets see how to write test cases for Intregation testing (Intregation of multiple Components)
+      
+      # - When Multiple Components work/intregate together to make a feature is called Intergation Testing
+          We are gonna test the flow of the feature
+
+      - $ - Lets test a search flow by Intregation testing
+
+            - Lets make a test file for this :- Search.test.js in testing file we'll render our Bodyy comp in jsdom
+
+            - Our Bodyy comp has fetch() API to fetch data, so we'll also see how to handle this sceneerio in test file
+                  how to write test cases for this(when we have async operation), because we are rendering in on
+                  jsdom (behave like browser but not a browser)
+
+            - fetch() API is superpower/feauture provided by Browser, not a part of Javascript
+                  so jsdom doesnt understand fetch() API
+
+            - so we have to mock this fetch() api, we have to make function like fetch(), just like we have mock data
+                  we can also craete mock fetch()function
+
+          @ $ # - To automatically running test cases/files (when we makes any changes and save test file) 
+                  we can write a commmand in package.json file   =>  "watch-test": "jest --watch"
+
+            $ - for doing async operation / or state updation , we have to wrap our rendered comp in act() function
+                  act() returns a promise, so write await before it and make our test funtionn async
+                  and this act() function again takes async function whcih renders our comp in jsdom
+
+              - Lets render a Body comp with search btn on jsdom
+
+              - If you dont have anything to get/find, so we can give data-testid to the elememnt, which we want 
+                to find/get, jest undertans data-testid
+
+             - to type the value in search input, we have to fire the change event and faking the value
+
+             - then we have to fire click event for search btn
+
+
+      - $ - we also have to functions beforeAll() and beforeEah() given by jest to perform task before
+            running all test cases or before each test case, they both take a callback function
+
+                      
+
+                  
+         

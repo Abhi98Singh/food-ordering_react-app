@@ -1,0 +1,70 @@
+{
+  "info": {
+    "id": "403809",
+    "name": "Starbucks Coffee",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/9/20/4963ab0f-55ab-4afa-98be-3a9a868b5a60_403809.JPG",
+    "locality": "Race Course Road",
+    "areaName": "New Palasia",
+    "costForTwo": "₹400 for two",
+    "cuisines": [
+      "Beverages",
+      "Cafe",
+      "Snacks",
+      "Desserts",
+      "Bakery",
+      "Ice Cream"
+    ],
+    "avgRating": 4.4,
+    "parentId": "195515",
+    "avgRatingString": "4.4",
+    "totalRatingsString": "1.0K+",
+    "sla": {
+      "deliveryTime": 32,
+      "lastMileTravel": 5.6,
+      "serviceability": "SERVICEABLE",
+      "slaString": "30-35 mins",
+      "lastMileTravelString": "5.6 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2024-09-30 23:59:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "50% OFF",
+      "subHeader": "UPTO ₹100"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {},
+  "cta": {
+    "link": "https://www.swiggy.com/city/indore/starbucks-coffee-race-course-road-new-palasia-rest403809",
+    "type": "WEBLINK"
+  }
+}
